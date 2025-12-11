@@ -10,21 +10,20 @@ import javax.sql.DataSource;
 @Configuration
 public class DBconfig {
     private BasicDataSource dataSource;
+
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         return dataSource;
     }
 
-    public DBconfig(@Value("${datasource.url}")String url,
-                    @Value("${datasource.username}") String username,
-                    @Value("${datasource.password}") String password){
-        dataSource= new BasicDataSource();
+    public DBconfig(@Value("${datasource.url}") String url,
+            @Value("${datasource.username}") String username,
+            @Value("${datasource.password}") String password) {
+        dataSource = new BasicDataSource();
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
 
     }
-
-
 
 }
